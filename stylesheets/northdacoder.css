@@ -535,7 +535,6 @@ body {
   color: #f0e7d5;
   font-weight: 100;
   background: #252525;
-  background: url('../images/stripes.jpg');
   background-size: 300px 300px;
   background-repeat: repeat;
   background-attachment: fixed !important;
@@ -545,6 +544,7 @@ body {
   background: -o-linear-gradient(#2a2a29, #1c1c1c);
   background: -ms-linear-gradient(#2a2a29, #1c1c1c);
   background: linear-gradient(#2a2a29, #1c1c1c);
+  background: url('../images/stripes.jpg');
 }
 
 h1, h2, h3, h4, h5, h6 {
