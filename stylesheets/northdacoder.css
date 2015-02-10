@@ -535,7 +535,7 @@ body {
   color: #f0e7d5;
   font-weight: 100;
   background: #252525;
-  background-size: 300px 300px;
+  background-size: 300px 100%;
   background-repeat: repeat;
   background-attachment: fixed !important;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2a2a29), color-stop(100%, #1c1c1c));
