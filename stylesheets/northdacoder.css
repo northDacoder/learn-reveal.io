@@ -535,7 +535,7 @@ body {
   color: #f0e7d5;
   font-weight: 100;
   background: #252525;
-  background: url('images/stripes.jpg');
+  background: url('../images/stripes.jpg');
   background-size: 300px 300px;
   background-repeat: repeat;
   background-attachment: fixed !important;
