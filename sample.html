@@ -10,11 +10,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="css/default.min.css">
+    <link rel="stylesheet" href="css/prism.css">
+
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css" type="text/css">
+
 
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -42,7 +51,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Reveal</a>
+      <a class="navbar-brand" href="#">RevealJS</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -69,7 +78,7 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-sm-10 col-sm-offset-1">
           <section>
             <div id="title">
               <h1 class="text-center">Learn <i class="fa fa-presentation"></i><strong>RevealJS</strong></h1>
@@ -110,7 +119,7 @@
             <hr>
             <br>
             <h3>Step 5</h3>        
-            <p>Now that we have the files we need, create a new file & save it as an <code>.html</code> file.  Go to <strong>File</strong> > <strong>New File</strong> > & <strong>save</strong> it as <code>presentation.html</code></p>
+            <p>Now that we have the files we need, create a new file & save it with the <code>.html</code> extension.  Go to <strong>File</strong> > <strong>New File</strong> > & <strong>save</strong> it as <code>presentation.html</code></p>
             <br>
             <hr>
             <br>
@@ -130,6 +139,7 @@
 &lt;html&gt;
 </code></pre>
 
+
 <hr>
 
 <h3>Step 6</h3>
@@ -141,31 +151,169 @@
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
+  &lt;!-- Reveal CSS main file & "black" theme --&gt;
+  &lt;link rel="stylesheet" href="css/reveal.css"&gt;
+  &lt;link rel="stylesheet" href="css/theme/black.css" id="theme"&gt;
 
+  &lt;!-- CSS File for the code syntax highlighting --&gt;
+  &lt;link rel="stylesheet" href="lib/css/zenburn.css"&gt;
+
+  &lt;!-- Printing and PDF exports --&gt;
+  &lt;script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  &lt;/script&gt;
+
+  &lt;!--[if lt IE 9]&gt;
+  &lt;script src="lib/js/html5shiv.js"&gt;&lt;/script&gt;
+  &lt;![endif]--&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
 &lt;/body&gt;
 &lt;html&gt;
 </code></pre>
+<br>
+<hr>
+<br>
 
-
+<h3>Step 7</h3>
+<p>We also need to add the following code to our <code>presentation.html</code> right before the closing <code>&lt;/body&gt;</code> tag.</p>
 <pre><code>
-&lt;div class="reveal"&gt;
-&lt;/div&gt;
+&lt;script src="lib/js/head.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/reveal.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+
+  // Full list of configuration options available at:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // Optional reveal.js plugins
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  });
+
+&lt;/script&gt;
 </code></pre>
+<br>
+<hr>
+<br>
 
-<pre><code>
-&lt;div class="slides"&gt;
-&lt;/div&gt;
+<h3>Step 8</h3>
+<p>Now that we have all of our <strong>RevealJS</strong> files loaded we can start creating beautiful presentations</p>
+<p>As the first child element inside the <code>&lt;body&gt;&lt;/body&gt;</code> tags, create a <code>&lt;div class="reveal"&gt;&lt;/div&gt;</code></p>
+<p>This is what tells our html document that this is where we are going to create our slides.</p>
+<pre><code></p>
+&lt;body&gt;
+  &lt;div class="reveal"&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
 </code></pre>
-
+<br>
+<hr>
+<br>
+<h3>Step 9</h3>
+<p>Now that we have our <code>&lt;div class="reveal"&gt;&lt;/div&gt;</code>, we need to create <code>&lt;div class="slides"&gt;&lt;/div&gt;</code> inside. </p>
+<p>This is where our individual slides will be created</p>
 <pre><code>
+&lt;body&gt;
+  &lt;div class="reveal"&gt;
+    &lt;div class="slides"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<br>
+<hr>
+<br>
+<h3>Step 10</h3>
+<p>Congratulations! It gets much, much easier from here on out!</p>
+<p>Now that we have the basic html structure for our slides to live, we can create slides using the <code>&lt;section&gt;&lt;/section&gt;</code> tags.
+<pre>
+<code>
+&lt;!-- To create a slide that will take up the entire screen --&gt;
 &lt;section&gt;
 &lt;/section&gt;
+</code>
+</pre>
+<br>
+<hr>
+<br>
+<h3>Step 11</h3>
+<p>To create 5 slides that will automatically have navigation from left to right, create multiple sections</p>
+<pre><code>
+&lt;body&gt;
+  &lt;div class="reveal"&gt;
+    &lt;div class="slides"&gt;
+      &lt;section&gt;
+        &lt;h1&gt;Slide 1&lt;/h1&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;h1&gt;Slide 2&lt;/h1&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;h1&gt;Slide 3&lt;/h1&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;h1&gt;Slide 4&lt;/h1&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;h1&gt;Slide 5&lt;/h1&gt;
+      &lt;/section&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
 </code></pre>
-
-          
+<br>
+<hr>
+<br>
+<h3>Step 12</h3>
+<p>To create a section of slides that will have vertical navigation, nest all of your sections inside of another section</p>
+<pre><code>
+&lt;body&gt;
+  &lt;div class="reveal"&gt;
+    &lt;div class="slides"&gt;
+      &lt;section&gt;
+        &lt;section&gt;
+          &lt;h1&gt;Slide 1&lt;/h1&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+          &lt;h1&gt;Slide 2&lt;/h1&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+          &lt;h1&gt;Slide 3&lt;/h1&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+          &lt;h1&gt;Slide 4&lt;/h1&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+          &lt;h1&gt;Slide 5&lt;/h1&gt;
+        &lt;/section&gt;
+      &lt;/section&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<br>
+<br>
+<hr>
+<br>
 
           </section>
 
@@ -179,6 +327,15 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="js/highlight.min.js"></script>
+    <script type="text/JavaScript">
+      $(document).ready(function(){
+        hljs.initHighlightingOnLoad();
+      });
+    </script>
+
+    <script type="text/javascript" src="js/prism.js"></script>
 
   </body>
 </html>
