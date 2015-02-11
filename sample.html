@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Learn-reveal.io by northDacoder</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+      .screenshot {
+        width: 500px;
+        height: auto;
+        padding: 30px;
+      }
+    </style>
+  
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Reveal</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/northDacoder/learn-reveal.io">View On <i class="fa fa-github"></i> GitHub</a></li>
+        <li><a href="https://twitter.com/northdacoder"><i class="fa fa-twitter"></i> Twitter</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Guide <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <section>
+            <div id="title">
+              <h1 class="text-center">Learn <i class="fa fa-presentation"></i><strong>RevealJS</strong></h1>
+              <p></p>
+              <hr>
+              <span class="credits left">Project maintained by <a href="https://github.com/northDacoder">northDacoder</a></span>
+              <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/northdacoder">@northdacoder</a></span>
+            </div>
+
+            <br>
+            <br>
+            <h3>Let's get started building amazing presentation with <strong>RevealJS</strong></h3>
+
+            <p><strong>RevealJS</strong> lets you build interactive presentations using HTML + CSS + JavaScript</p>
+
+            <br>
+            <h3>Step 1</h3>        
+            <p>Download the <code>.zip</code> file from my <strong>RevealJS</strong> Github repo & unzip the folder to your desktop</p>
+            <a href="https://github.com/northDacoder/reveal.js" type="button" class='btn btn-success btn-sm'><i class="fa fa-download"></i> Download Reveal.js</a><br><br>
+
+            <hr>
+            <br>
+            <h3>Step 2</h3>        
+            <p>Navigate to your desktop & double-click on the <code>index.html</code> file located inside the unzipped reveal folder</p>
+            <p>You should see a sample presentation already created that looks something like this:</p>
+            <img src="images/sample-reveal.png" class="img-responsive screenshot">
+            <br>
+            <hr>
+            <br>
+            <h3>Step 3</h3>        
+            <p>In your favorite text editor (Atom, Sublime Text, etc), open the <code>reveal/</code> folder located on your desktop</p>
+            <br>
+            <hr>
+            <br>
+            <h3>Step 4</h3>        
+            <p>Inside your text editor you should see all the file names of the <code>reveal/</code> folder on the left hand side of your screen</p>
+            <br>
+            <hr>
+            <br>
+            <h3>Step 5</h3>        
+            <p>Now that we have the files we need, create a new file & save it as an <code>.html</code> file.  Go to <strong>File</strong> > <strong>New File</strong> > & <strong>save</strong> it as <code>presentation.html</code></p>
+            <br>
+            <hr>
+            <br>
+            <h3>Step 6</h3>        
+            <p>Now that we have a blank <code>presenation.html</code> file saved we can add some basic html elements. Add the following elements & <strong>save</strong> the file.</p><br>
+            <br>
+            <code>presentation.html</code><br>
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;html&gt;
+</code></pre>
+
+<hr>
+
+<h3>Step 6</h3>
+    <p>Next, we need to include our <strong>RevealJS</strong> files in our <code>presentation.html</code> file in order to use the built-in features of the Reveal framework</p>
+
+    <p>Add the following links to the head of your index.html file so we can start creating slides</p>
+
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;html&gt;
+</code></pre>
+
+
+<pre><code>
+&lt;div class="reveal"&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre><code>
+&lt;div class="slides"&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre><code>
+&lt;section&gt;
+&lt;/section&gt;
+</code></pre>
+
+          
+
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
